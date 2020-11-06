@@ -19,6 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
+    sdkbox::bb::plugin::AppsFlyer::init();
     sdkbox::bb::plugin::AppsFlyer::setListener([](const std::string& evt, const std::string& json) {
         NSString* nss = [NSString stringWithUTF8String: evt.c_str()];
         NSString* nsJson = [NSString stringWithUTF8String: json.c_str()];
