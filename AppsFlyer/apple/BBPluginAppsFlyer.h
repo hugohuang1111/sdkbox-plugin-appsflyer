@@ -5,10 +5,22 @@
 
 @interface BBPluginAppsFlyer : BBPluginBase
 
-- (void) setAppID:(BBMsg* _Nullable)msg;
-- (void) setDevKey:(BBMsg* _Nullable)msg;
-- (void) setDebug:(BBMsg* _Nullable)msg;
-- (void) start:(BBMsg* _Nullable)msg;
+- (void) setAppID:(BBMsg* _Nonnull)msg;
+- (void) setDevKey:(BBMsg* _Nonnull)msg;
+- (void) setDebug:(BBMsg* _Nonnull)msg;
+- (void) setAdditionalData:(BBMsg* _Nonnull)msg;
+- (void) getAppsFlyerUID: (BBMsg* _Nonnull)msg;
+- (void) setCustomerUserID: (BBMsg* _Nonnull)msg;
+- (void) anonymizeUser: (BBMsg* _Nonnull) msg;
+- (void) collectASA: (BBMsg* _Nonnull) msg;
+- (void) waitForATTUserAuthorizationWithTimeoutInterval: (BBMsg* _Nonnull) msg;
+- (void) stop: (BBMsg* _Nonnull)msg;
+- (void) start: (BBMsg* _Nonnull)msg;
+- (void) logEvent: (BBMsg* _Nonnull)msg;
+- (void) useReceiptValidationSandbox: (BBMsg* _Nonnull) msg;
+- (void) validateAndLogInAppPurchase: (BBMsg* _Nonnull) msg;
+- (void) setMinTimeBetweenSessions: (BBMsg* _Nonnull) msg;
+- (void) setResolveDeepLinkURLs: (BBMsg* _Nonnull) msg;
 
 // application life cycle
 
