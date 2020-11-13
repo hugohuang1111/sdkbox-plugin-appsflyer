@@ -1,0 +1,7 @@
+include ':app'
+include ':PluginAppsFlyer'
+
+include ':Bridge'
+project(':Bridge').projectDir = new File(settingsDir, '../../sdkbox-bridge/proj.android')
+
+rootProject.name = "Test"
