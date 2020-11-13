@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,13 +23,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ms-eB-300">
+                                <rect key="frame" x="190" y="383" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="onBtnStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fBF-Ms-rmH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p63-Mv-UCp">
+                                <rect key="frame" x="191" y="433" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="onBtnStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pw1-QN-GVz"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="6aU-XM-lqo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Aad-ed-yGk"/>
-                            <constraint firstItem="6aU-XM-lqo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="fhN-9l-bhK"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1ms-eB-300" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="9kf-zN-8nn"/>
+                            <constraint firstItem="6aU-XM-lqo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Aad-ed-yGk"/>
+                            <constraint firstItem="p63-Mv-UCp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QsF-sG-3OD"/>
+                            <constraint firstItem="1ms-eB-300" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ri3-rj-3LA"/>
+                            <constraint firstItem="6aU-XM-lqo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="fhN-9l-bhK"/>
+                            <constraint firstItem="p63-Mv-UCp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oVQ-Sx-f2B"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -36,4 +55,9 @@
             <point key="canvasLocation" x="139" y="104"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "../../AppsFlyer/native/PluginAppsFlyer.h"
+#include "ios/BBBridge.h"
 
 @interface AppDelegate ()
 
@@ -20,14 +21,6 @@
     // Override point for customization after application launch.
 
     sdkbox::bb::plugin::AppsFlyer::init();
-    sdkbox::bb::plugin::AppsFlyer::setListener([](const std::string& evt, const std::string& json) {
-        NSString* nss = [NSString stringWithUTF8String: evt.c_str()];
-        NSString* nsJson = [NSString stringWithUTF8String: json.c_str()];
-        NSLog(@"AppsFlyer evt:%@ json:%@", nss, nsJson);
-    });
-    sdkbox::bb::plugin::AppsFlyer::setAppID("1423010453");
-    sdkbox::bb::plugin::AppsFlyer::setDevKey("gQHXnL6H3dccTbdNcLywNj");
-    sdkbox::bb::plugin::AppsFlyer::setDebug(true);
 
     return YES;
 }
@@ -49,5 +42,8 @@
     // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
 }
 
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler API_AVAILABLE(ios(7.0)) {
+    [super application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+}
 
 @end
