@@ -44,9 +44,11 @@ target_link_libraries( # Specifies the target library.
                        # included in the NDK.
                        ${log-lib} )
 
-target_include_directories(native-lib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../../../../sdkbox-bridge/bridge/public)
+
 target_include_directories(native-lib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../../../AppsFlyer/native)
 
-add_subdirectory(../../../../../../sdkbox-bridge/proj.android/src/main/cpp libbridge)
-target_link_libraries(native-lib bridge)
+target_include_directories(native-lib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../../PluginAppsFlyer/jni/bridge)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../../../../PluginAppsFlyer/jni/bridge bridge)
+target_link_libraries(native-lib ext_bridge)
+
 

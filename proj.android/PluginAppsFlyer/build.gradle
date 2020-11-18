@@ -28,12 +28,18 @@ android {
     }
 }
 
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
 
-    implementation project(':Bridge')
+    implementation (name: 'Bridge', ext: 'aar')
 
     //make sure to use the latest SDK version: https://mvnrepository.com/artifact/com.appsflyer/af-android-sdk
     implementation 'com.appsflyer:af-android-sdk:6.0.0'
