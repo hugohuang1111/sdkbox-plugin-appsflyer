@@ -47,8 +47,10 @@ target_link_libraries( # Specifies the target library.
 
 target_include_directories(native-lib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../../../AppsFlyer/native)
 
-target_include_directories(native-lib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../../PluginAppsFlyer/jni/bridge)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../../../../PluginAppsFlyer/jni/bridge bridge)
-target_link_libraries(native-lib ext_bridge)
+# target_include_directories(native-lib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../../PluginAppsFlyer/jni/bridge)
+# add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../../../../PluginAppsFlyer/jni/bridge bridge)
+# target_link_libraries(native-lib ext_bridge)
 
-
+target_include_directories(native-lib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../../../../sdkbox-bridge/bridge/public)
+add_subdirectory(../../../../../../sdkbox-bridge/proj.android/Bridge/src/main/cpp libbridge)
+target_link_libraries(native-lib bridge)

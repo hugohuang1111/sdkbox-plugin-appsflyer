@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/PluginAppsFlyer" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/../../sdkbox-bridge/proj.android/Bridge" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
