@@ -6,26 +6,21 @@
     "libraries": {
         "android": {
             "libs": [
-                {
-                    "path": "android/libs/PluginAppsFlyer-release.aar",
-                    "deps": [
-                        "implementation 'com.appsflyer:af-android-sdk:6.0.0'",
-                        "implementation 'com.android.installreferrer:installreferrer:1.1'"
-                    ]
-                }
+                "android/libs/PluginAppsFlyer-release.aar"
+            ],
+            "deps": [
+                "implementation 'com.appsflyer:af-android-sdk:6.0.0'",
+                "implementation 'com.android.installreferrer:installreferrer:1.1'"
             ]
         },
         "ios": {
             "libs": [
-                {
-                    "path": "ios/AppsFlyer.xcframeowrk"
-                },
-                {
-                    "path": "ios/AppsFlyerLib.xcframeowrk",
-                    "deps": [
-                        "Account.framework"
-                    ]
-                }
+                "ios/AppsFlyer.xcframeowrk",
+                "ios/AppsFlyerLib.xcframeowrk"
+            ],
+            "deps": [
+                "AdSupport.framework",
+                "iAd.framework"
             ]
         }
     }
