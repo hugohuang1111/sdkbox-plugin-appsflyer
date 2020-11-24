@@ -1,2 +1,16 @@
 
 .DS_Store
+
+package/android/
+package/ios/
+package/source/
+
+proj.android/PluginAppsFlyer/jni/bridge/
+proj.ios/Bridge.xcframework/
+proj.ios/Distribution/DynamicFramework/
+
+*.zip
+
+AppsFlyer/depedencies/apple/*.framework/
+
+

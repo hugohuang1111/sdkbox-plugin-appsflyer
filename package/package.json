@@ -15,13 +15,18 @@
         },
         "ios": {
             "libs": [
-                "ios/AppsFlyer.xcframeowrk",
-                "ios/AppsFlyerLib.xcframeowrk"
+                "ios/AppsFlyer.xcframework",
+                "ios/AppsFlyerLib.framework"
             ],
             "deps": [
                 "AdSupport.framework",
                 "iAd.framework"
             ]
-        }
+        },
+        "sources": [
+            "source/json.hpp",
+            "source/PluginAppsFlyer.cpp",
+            "source/PluginAppsFlyer.h"
+        ]
     }
 }
