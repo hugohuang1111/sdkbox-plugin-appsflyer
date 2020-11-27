@@ -1,7 +1,7 @@
 #include "./json.hpp"
 #include "PluginAppsFlyer.h"
-#include "Bridge.hpp"
-#include "Msg.hpp"
+#include "Bridge/Bridge.hpp"
+#include "Bridge/Msg.hpp"
 
 namespace sdkbox {
 namespace bb {

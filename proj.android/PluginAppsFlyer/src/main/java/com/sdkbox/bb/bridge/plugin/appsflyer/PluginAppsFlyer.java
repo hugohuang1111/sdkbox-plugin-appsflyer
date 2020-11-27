@@ -115,7 +115,7 @@ public class PluginAppsFlyer extends PluginBase {
                 msg.pushValue("onConversionDataSuccess");
                 JSONObject jsonObject = new JSONObject(conversionData);
                 msg.pushValue(jsonObject.toString());
-                send(msg);
+                sendToNative(msg);
             }
 
             @Override
@@ -123,7 +123,7 @@ public class PluginAppsFlyer extends PluginBase {
                 Msg msg = createDefaultMsg();
                 msg.pushValue("onConversionDataFail");
                 msg.pushValue(errorMessage);
-                send(msg);
+                sendToNative(msg);
             }
 
             @Override
@@ -132,7 +132,7 @@ public class PluginAppsFlyer extends PluginBase {
                 msg.pushValue("onAppOpenAttribution");
                 JSONObject jsonObject = new JSONObject(conversionData);
                 msg.pushValue(jsonObject.toString());
-                send(msg);
+                sendToNative(msg);
             }
 
             @Override
@@ -140,7 +140,7 @@ public class PluginAppsFlyer extends PluginBase {
                 Msg msg = createDefaultMsg();
                 msg.pushValue("onAttributionFailure");
                 msg.pushValue(errorMessage);
-                send(msg);
+                sendToNative(msg);
             }
         };
 
@@ -149,13 +149,13 @@ public class PluginAppsFlyer extends PluginBase {
                     public void onValidateInApp() {
                         Msg msg = createDefaultMsg();
                         msg.pushValue("onValidateInApp");
-                        send(msg);
+                        sendToNative(msg);
                     }
                     public void onValidateInAppFailure(String error) {
                         Msg msg = createDefaultMsg();
                         msg.pushValue("onValidateInAppFailure");
                         msg.pushValue(error);
-                        send(msg);
+                        sendToNative(msg);
                     }
                 });
 
@@ -242,7 +242,7 @@ public class PluginAppsFlyer extends PluginBase {
 
         msg.cleanValue();
         msg.pushValue(afid);
-        send(msg);
+        sendToNative(msg);
     }
 
     public void stop(Msg msg) {
@@ -263,7 +263,7 @@ public class PluginAppsFlyer extends PluginBase {
     public void isStopped(Msg msg) {
         msg.cleanValue();
         msg.pushValue(AppsFlyerLib.getInstance().isStopped());
-        send(msg);
+        sendToNative(msg);
     }
 
     public void anonymizeUser(Msg msg) {

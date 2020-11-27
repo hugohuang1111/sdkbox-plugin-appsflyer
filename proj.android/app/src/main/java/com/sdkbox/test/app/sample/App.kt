@@ -2,7 +2,6 @@ package com.sdkbox.test.app.sample
 
 import android.app.Application
 import com.sdkbox.bb.bridge.core.Bridge
-import com.sdkbox.bb.bridge.plugin.appsflyer.PluginAppsFlyer
 
 class App : com.sdkbox.bb.bridge.core.BApplication() {
 
