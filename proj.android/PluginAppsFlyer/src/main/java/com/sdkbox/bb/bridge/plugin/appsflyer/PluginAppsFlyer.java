@@ -172,7 +172,7 @@ public class PluginAppsFlyer extends PluginBase {
                     @Override
                     public void onSuccess() {
                         msg.cleanValue();
-                        send(msg);
+                        sendToNative(msg);
                     }
 
                     @Override
@@ -180,7 +180,7 @@ public class PluginAppsFlyer extends PluginBase {
                         Msg msg = createDefaultMsg();
                         msg.pushValue(i);
                         msg.pushValue(s);
-                        send(msg);
+                        sendToNative(msg);
                     }
                 });
     }
