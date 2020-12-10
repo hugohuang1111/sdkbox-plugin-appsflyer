@@ -164,6 +164,9 @@ public class PluginAppsFlyer extends PluginBase {
     }
 
     public void logEvent(Msg msg) {
+        if (null == application) {
+            return;
+        }
         String evt = msg.getValueString(0);
         JSONObject jsonParams = msg.getValueJson(1);
 
@@ -186,6 +189,9 @@ public class PluginAppsFlyer extends PluginBase {
     }
 
     public void validateAndLogInAppPurchase(Msg msg) {
+        if (null == application) {
+            return;
+        }
         JSONObject purchaseJson = msg.getValueJson(0);
 
         String publicKey = null;
