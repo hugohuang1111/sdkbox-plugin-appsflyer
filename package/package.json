@@ -30,11 +30,6 @@
                 "name": "AppsFlyer",
                 "class": "BBPluginAppsFlyer"
             }
-        },
-        "sources": [
-            "source/json.hpp",
-            "source/PluginAppsFlyer.cpp",
-            "source/PluginAppsFlyer.h"
-        ]
+        }
     }
 }

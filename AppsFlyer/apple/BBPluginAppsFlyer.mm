@@ -189,6 +189,13 @@
 -(void) setResolveDeepLinkURLs: (BBMsg*) msg {
     NSString* json = [msg getValueString:0];
     NSArray* urls = [BBUtilsIOS json2arr:json];
+    if (nil == urls) {
+        NSMutableArray* murls = [[NSMutableArray alloc] init];
+        for (NSInteger i = 0; i < [msg getValuesLength]; i++) {
+            [murls addObject: [msg getValueString: i]];
+        }
+        urls = murls;
+    }
     [AppsFlyerLib shared].resolveDeepLinkURLs = urls;
 }
 

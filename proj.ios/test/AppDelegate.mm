@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "../../AppsFlyer/native/PluginAppsFlyer.h"
+#import "../../AppsFlyer/source/PluginAppsFlyer.h"
 #include "ios/BBBridge.h"
 
 @interface AppDelegate ()

@@ -1,5 +1,4 @@
 #import "SceneDelegate.h"
-#import "../../AppsFlyer/native/PluginAppsFlyer.h"
 
 @interface SceneDelegate ()
 
