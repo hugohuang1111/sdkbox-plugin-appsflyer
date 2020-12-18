@@ -222,14 +222,29 @@ public class PluginAppsFlyer extends PluginBase {
     }
 
     public void setResolveDeepLinkURLs(Msg msg) {
-        JSONArray jsonArray = msg.getValueJsonArray(0);
         String[] urls = null;
-        if (jsonArray.length() > 0) {
-            urls = new String[jsonArray.length()];
-            for (int i = 0; i < jsonArray.length(); i++) {
-                urls[i] = jsonArray.optString(i, "");
+        int len = msg.getValuesLength();
+        if (0 == len) {
+            return;
+        }
+        urls = new String[len];
+        for (int i = 0; i < len; i++) {
+            urls[i] = msg.getValueString(i);
+        }
+        if (1 == len) {
+            // try json
+            try {
+                JSONArray jsonArray = new JSONArray(urls[0]);
+                if (jsonArray.length() > 0) {
+                    urls = new String[jsonArray.length()];
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        urls[i] = jsonArray.optString(i, "");
+                    }
+                }
+            } catch (JSONException e) {
             }
         }
+
         AppsFlyerLib.getInstance().setResolveDeepLinkURLs(urls);
     }
 

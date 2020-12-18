@@ -100,11 +100,13 @@ function AppsFlyer.start()
     sdkbox.bb.Bridge.send(m);
 end
 
-function AppsFlyer.logEvent(evt, json)
+function AppsFlyer.logEvent(evt, json, cb)
     local m = Msg:create("AppsFlyer", "logEvent");
     m:pushValue(evt);
     m:pushValue(json);
-    sdkbox.bb.Bridge.send(m);
+    sdkbox.bb.Bridge.send(m, function(msg)
+        if (nil ~= cb) then cb(msg.values[1], msg.values[2]) end
+    end);
 end
 
 function AppsFlyer.useReceiptValidationSandbox(b)
