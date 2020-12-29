@@ -1,0 +1,18 @@
+{
+    "name": "patch build gradle",
+    "file": "proj.android/app/build.gradle",
+    "patches": [
+        {
+            "check": "com.appsflyer:af-android-sdk",
+            "content": "dependencies { implementation 'com.appsflyer:af-android-sdk:6.0.0' }",
+            "anchor": "dependencies",
+            "anchorPos": -1
+        },
+        {
+            "check": "com.android.installreferrer:installreferrer",
+            "content": "dependencies { implementation 'com.android.installreferrer:installreferrer:1.1' }",
+            "anchor": "dependencies",
+            "anchorPos": -1
+        }
+    ]
+}
