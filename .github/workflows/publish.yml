@@ -7,29 +7,36 @@ on:
 
 jobs:
 
-  build:
+  build_release:
     name: iOS Build
-    needs: create_release
-    runs-on: macOS-latest
+    runs-on: macos-10.15
     env: 
       DEVELOPER_DIR: /Applications/Xcode_12.app/Contents/Developer
     steps:
-      - name: Check out repo
-        uses: actions/checkout@v2
 
-      - name: Download sdkboxt
-        run: curl https://raw.githubusercontent.com/sdkbox/storage/master/sdkboxtools/sdkboxt -o sdkboxt && chmod +x ./sdkboxt
+    - name: Check out repo
+      uses: actions/checkout@v2
 
-      - name: Build
-        run: ./sdkboxt -cmd build
+    - name: Download sdkboxt
+      run: curl https://raw.githubusercontent.com/sdkbox/storage/master/sdkboxtools/sdkboxt -o sdkboxt && chmod +x ./sdkboxt
 
-      - name: Package
-        run: ./sdkboxt -cmd package
+    - name: Build
+      run: ./sdkboxt -cmd build
+
+    - name: Package
+      run: ./sdkboxt -cmd package
+
+    - name: upload plugin package
+      uses: actions/upload-artifact@v2
+      with:
+        name: sdkbox-bb-plugin
+        path: AppsFlyer.zip
+        retention-days: 0.1
 
   create_release:
     name: Create release
-    needs: build
-    runs-on: macOS-latest
+    needs: build_release
+    runs-on: ubuntu-18.04
     outputs:
       upload_url: ${{ steps.create_release.outputs.upload_url }}
     steps:
@@ -44,10 +51,15 @@ jobs:
 
   upload_asset:
     name: Upload Asset
-    runs-on: macOS-latest
     needs: create_release
+    runs-on: ubuntu-18.04
     steps:
-      - name: Upload Release Asset
+      - name: download package
+        uses: actions/download-artifact@v2
+        with:
+          name: sdkbox-bb-plugin
+
+      - name: upload package asset
         id: upload-release-asset 
         uses: actions/upload-release-asset@v1
         env:
