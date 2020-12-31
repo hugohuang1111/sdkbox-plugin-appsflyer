@@ -21,7 +21,7 @@ jobs:
       run: curl https://raw.githubusercontent.com/sdkbox/storage/master/sdkboxtools/sdkboxt -o sdkboxt && chmod +x ./sdkboxt
 
     - name: Download Bridge.zip
-      run: curl https://raw.githubusercontent.com/sdkbox/storage/master/plugins/Bridge.zip -o ridge.zip && unzip Bridge.zip
+      run: curl https://raw.githubusercontent.com/sdkbox/storage/master/plugins/Bridge.zip -o Bridge.zip && unzip Bridge.zip
 
     - name: Build
       run: ./sdkboxt -cmd build
