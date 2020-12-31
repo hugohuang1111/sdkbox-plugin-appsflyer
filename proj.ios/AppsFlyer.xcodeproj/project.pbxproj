@@ -503,7 +503,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../AppsFlyer/depedencies/apple\"";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../package/ios/framework\"";
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../../sdkbox-bridge/bridge/public\"",
 					"\"$(SRCROOT)/../../sdkbox-bridge/bridge/public/ios\"",
@@ -531,7 +531,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../AppsFlyer/depedencies/apple\"";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../package/ios/framework\"";
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../../sdkbox-bridge/bridge/public\"",
 					"\"$(SRCROOT)/../../sdkbox-bridge/bridge/public/ios\"",
