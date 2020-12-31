@@ -1,7 +1,7 @@
 #pragma once
 
 #import <UIKit/UIKit.h>
-#import "BBPluginBase.h"
+#import "Bridge/BBPluginBase.h"
 
 @interface BBPluginAppsFlyer : BBPluginBase
 

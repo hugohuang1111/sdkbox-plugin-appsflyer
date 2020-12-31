@@ -1,6 +1,6 @@
 #import <UserNotifications/UserNotifications.h>
 #import <AppsFlyerLib/AppsFlyerLib.h>
-#import "BBUtilsIOS.h"
+#import "Bridge/BBUtilsIOS.h"
 #import "BBPluginAppsFlyer.h"
 #import "BBPluginAppsFlyerDelegate.h"
 #import "BBUNUserNotificationCenterDelegate.h"

@@ -1,5 +1,5 @@
 #import "BBPluginAppsFlyerDelegate.h"
-#import "BBUtilsIOS.h"
+#import "Bridge/BBUtilsIOS.h"
 
 @implementation BBPluginAppsFlyerDelegate
 
