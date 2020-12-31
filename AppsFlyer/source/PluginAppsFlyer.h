@@ -1,1 +1,1 @@
-../../package/source/cpp/PluginAppsFlyer.h
+../../package/cpp/PluginAppsFlyer.h
