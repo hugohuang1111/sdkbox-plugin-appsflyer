@@ -8,7 +8,7 @@ on:
 jobs:
 
   build_release:
-    name: iOS Build
+    name: build release
     runs-on: macos-10.15
     env:
       DEVELOPER_DIR: /Applications/Xcode_12.app/Contents/Developer
@@ -23,11 +23,15 @@ jobs:
     - name: Download Bridge.zip
       run: curl https://raw.githubusercontent.com/sdkbox/storage/master/plugins/Bridge.zip -o Bridge.zip && unzip Bridge.zip
 
-    - name: Build
-      run: ./sdkboxt -cmd build
+#     - name: Build
+#       run: ./sdkboxt -cmd build
 
-    - name: Package
-      run: ./sdkboxt -cmd package
+#     - name: Package
+#       run: ./sdkboxt -cmd package
+
+    - name: build android
+      run: cd proj.android && ./gradlew assembleRelease
+
 
     - name: upload plugin package
       uses: actions/upload-artifact@v2
