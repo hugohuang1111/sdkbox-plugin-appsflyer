@@ -10,7 +10,7 @@ jobs:
   build_release:
     name: iOS Build
     runs-on: macos-10.15
-    env: 
+    env:
       DEVELOPER_DIR: /Applications/Xcode_12.app/Contents/Developer
     steps:
 
@@ -19,6 +19,9 @@ jobs:
 
     - name: Download sdkboxt
       run: curl https://raw.githubusercontent.com/sdkbox/storage/master/sdkboxtools/sdkboxt -o sdkboxt && chmod +x ./sdkboxt
+
+    - name: Download Bridge.zip
+      run: curl https://raw.githubusercontent.com/sdkbox/storage/master/plugins/Bridge.zip -o ridge.zip && unzip Bridge.zip
 
     - name: Build
       run: ./sdkboxt -cmd build
