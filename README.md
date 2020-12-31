@@ -10,6 +10,7 @@
 
 Project Struct:
 
+```bash
 ├── AppsFlyer
 ├── Bridge              // Decompressed Bridge.zip
 │   ├── android
@@ -24,6 +25,7 @@ Project Struct:
 ├── proj.android
 ├── proj.ios
 └── sdkboxt             // Download
+```
 
 ### Run
 
