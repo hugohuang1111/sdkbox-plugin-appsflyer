@@ -45,11 +45,11 @@ android {
     }
 }
 
-repositories {
-    flatDir {
-        dirs 'libs', '../PluginAppsFlyer/libs'
-    }
-}
+//repositories {
+//    flatDir {
+//        dirs 'libs', '../PluginAppsFlyer/libs'
+//    }
+//}
 
 dependencies {
 

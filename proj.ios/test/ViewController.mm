@@ -8,7 +8,7 @@
 
 #import <vector>
 #import "ViewController.h"
-#import "../../AppsFlyer/source/PluginAppsFlyer.h"
+#import "../../package/cpp/PluginAppsFlyer.h"
 
 @interface ViewController ()
 

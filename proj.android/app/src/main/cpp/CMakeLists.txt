@@ -18,7 +18,7 @@ add_library( # Sets the name of the library.
 
              # Provides a relative path to your source file(s).
              native-lib.cpp
-             ${CMAKE_CURRENT_SOURCE_DIR}/../../../../../AppsFlyer/source/PluginAppsFlyer.cpp)
+             ${CMAKE_CURRENT_SOURCE_DIR}/../../../../../package/cpp/PluginAppsFlyer.cpp)
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
@@ -45,10 +45,10 @@ target_link_libraries( # Specifies the target library.
                        ${log-lib} )
 
 
-target_include_directories(native-lib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../../../AppsFlyer/source)
+target_include_directories(native-lib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../../../package/cpp)
 
-target_include_directories(native-lib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../../PluginAppsFlyer/jni/bridge)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../../../../PluginAppsFlyer/jni/bridge bridge)
-target_link_libraries(native-lib ext_bridge)
+target_include_directories(native-lib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/../../../../../Bridge/android/jni)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../../../../../Bridge/android/jni/Bridge Bridge)
+target_link_libraries(native-lib ext_Bridge)
 
 

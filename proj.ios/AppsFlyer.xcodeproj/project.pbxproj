@@ -60,8 +60,8 @@
 		9A0C1FD425512D1800E88CBB /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/UserNotifications.framework; sourceTree = DEVELOPER_DIR; };
 		9A0C1FD725512EA500E88CBB /* BBUNUserNotificationCenterDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BBUNUserNotificationCenterDelegate.mm; sourceTree = "<group>"; };
 		9A0C1FD825512EA500E88CBB /* BBUNUserNotificationCenterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBUNUserNotificationCenterDelegate.h; sourceTree = "<group>"; };
-		9A5F4AA0255286B800EA5E67 /* PluginAppsFlyer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PluginAppsFlyer.cpp; sourceTree = "<group>"; };
-		9A5F4AA1255286B800EA5E67 /* PluginAppsFlyer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PluginAppsFlyer.h; sourceTree = "<group>"; };
+		9A5F4AA0255286B800EA5E67 /* PluginAppsFlyer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PluginAppsFlyer.cpp; path = ../../package/cpp/PluginAppsFlyer.cpp; sourceTree = "<group>"; };
+		9A5F4AA1255286B800EA5E67 /* PluginAppsFlyer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PluginAppsFlyer.h; path = ../../package/cpp/PluginAppsFlyer.h; sourceTree = "<group>"; };
 		9A89597E2550F78200D39EC8 /* AppsFlyer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppsFlyer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8959812550F78200D39EC8 /* AppsFlyer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppsFlyer.h; sourceTree = "<group>"; };
 		9A8959822550F78200D39EC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 		9A89599E2550F8BD00D39EC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A8959A02550F8BD00D39EC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A8959A12550F8BD00D39EC8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9A9A6DA32563BB2E00071027 /* Bridge.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Bridge.xcframework; sourceTree = "<group>"; };
+		9A9A6DA32563BB2E00071027 /* Bridge.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Bridge.xcframework; path = ../Bridge/ios/framework/Bridge.xcframework; sourceTree = "<group>"; };
 		9AE40883255CCC3700496A5B /* test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = test.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

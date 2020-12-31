@@ -1,9 +1,9 @@
 #include <string>
 #include <sstream>
+#include <vector>
 #include <thread>
 #include <jni.h>
 #include <android/log.h>
-#include "Bridge.hpp"
 #include "PluginAppsFlyer.h"
 
 #define LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG, "Native", __VA_ARGS__)
@@ -88,11 +88,56 @@ Java_com_sdkbox_test_app_sample_MainActivity_nativeInit(JNIEnv *env, jobject thi
         ss << "AppsFlyer evt:" << evt << " json:" << json;
         notifyToJava(ss.str());
     });
+
+    sdkbox::bb::plugin::AppsFlyer::setAppID("com.sdkbox.test.app.sample");
+    sdkbox::bb::plugin::AppsFlyer::setDevKey("gQHXnL6H3dccTbdNcLywNj");
+    sdkbox::bb::plugin::AppsFlyer::setDebug(true);
+
+    sdkbox::bb::plugin::AppsFlyer::setImeiData("imei string");
+    sdkbox::bb::plugin::AppsFlyer::setAndroidIdData("android id");
+    sdkbox::bb::plugin::AppsFlyer::setCollectIMEI(true);
+    sdkbox::bb::plugin::AppsFlyer::setCollectAndroidID(true);
+    sdkbox::bb::plugin::AppsFlyer::setCollectOaid(true);
+    sdkbox::bb::plugin::AppsFlyer::anonymizeUser(true);
+    sdkbox::bb::plugin::AppsFlyer::collectASA(true);
+
+    sdkbox::bb::plugin::AppsFlyer::setAdditionalData(
+            R"({
+"k1": "v1"
+})");
+    sdkbox::bb::plugin::AppsFlyer::getAppsFlyerUID([](const std::string& appsflyerID) {
+        std::stringstream ss;
+        // LOGD("AppsFlyer UID: %s", appsflyerID.c_str());
+        ss << "AppsFlyer UID:" << appsflyerID;
+        notifyToJava(ss.str());
+    });
+    sdkbox::bb::plugin::AppsFlyer::setCustomerUserID("user_123456");
+    sdkbox::bb::plugin::AppsFlyer::waitForATTUserAuthorizationWithTimeoutInterval(13);
+    sdkbox::bb::plugin::AppsFlyer::useReceiptValidationSandbox(true);
+    sdkbox::bb::plugin::AppsFlyer::validateAndLogInAppPurchase(
+            R"({
+    "publicKey": "pubKey",
+    "signature": "sigxxxx",
+    "purchaseData": "purhchasexxx",
+    "price": "123",
+    "currency": "CNY",
+    "parameters": {
+        "k1": "v1",
+        "k2": "v2"
+    }
+})"
+    );
+    sdkbox::bb::plugin::AppsFlyer::setMinTimeBetweenSessions(21);
+
+    std::vector<std::string> urls{"test.com", "click.test.com"};
+    sdkbox::bb::plugin::AppsFlyer::setResolveDeepLinkURLs(urls);
 }
 
 extern "C"
 JNIEXPORT void JNICALL
 Java_com_sdkbox_test_app_sample_MainActivity_nativeSend1(JNIEnv *env, jobject thiz, jstring jplugin, jstring jfunc, jstring jparams) {
+
+    /*
     const char* c_str = nullptr;
     c_str = env->GetStringUTFChars(jplugin, nullptr);
     if(c_str == nullptr) { return; }
@@ -110,60 +155,22 @@ Java_com_sdkbox_test_app_sample_MainActivity_nativeSend1(JNIEnv *env, jobject th
     if(c_str == nullptr) { return; }
     std::string params(c_str);
     env->ReleaseStringUTFChars(jparams, c_str);
-
-   sdkbox::bb::plugin::AppsFlyer::setAppID("com.sdkbox.test.app.sample");
-   sdkbox::bb::plugin::AppsFlyer::setDevKey("gQHXnL6H3dccTbdNcLywNj");
-   sdkbox::bb::plugin::AppsFlyer::setDebug(true);
-
-    sdkbox::bb::plugin::AppsFlyer::setImeiData("imei string");
-    sdkbox::bb::plugin::AppsFlyer::setAndroidIdData("android id");
-    sdkbox::bb::plugin::AppsFlyer::setCollectIMEI(true);
-    sdkbox::bb::plugin::AppsFlyer::setCollectAndroidID(true);
-    sdkbox::bb::plugin::AppsFlyer::setCollectOaid(true);
-    sdkbox::bb::plugin::AppsFlyer::anonymizeUser(true);
-    sdkbox::bb::plugin::AppsFlyer::collectASA(true);
-
-    sdkbox::bb::plugin::AppsFlyer::setAdditionalData(
-R"({
-"k1": "v1"
-})");
-    sdkbox::bb::plugin::AppsFlyer::getAppsFlyerUID([](const std::string& appsflyerID) {
-        std::stringstream ss;
-        // LOGD("AppsFlyer UID: %s", appsflyerID.c_str());
-        ss << "AppsFlyer UID:" << appsflyerID;
-        notifyToJava(ss.str());
-    });
-    sdkbox::bb::plugin::AppsFlyer::setCustomerUserID("user_123456");
-    sdkbox::bb::plugin::AppsFlyer::waitForATTUserAuthorizationWithTimeoutInterval(13);
-    sdkbox::bb::plugin::AppsFlyer::logEvent(sdkbox::bb::plugin::AppsFlyer::AFEventPurchase,
-R"({
-"name": "test_name",
-"price": "123"
-})"
-                                            );
-    sdkbox::bb::plugin::AppsFlyer::useReceiptValidationSandbox(true);
-    sdkbox::bb::plugin::AppsFlyer::validateAndLogInAppPurchase(
-R"({
-    "publicKey": "pubKey",
-    "signature": "sigxxxx",
-    "purchaseData": "purhchasexxx",
-    "price": "123",
-    "currency": "CNY",
-    "parameters": {
-        "k1": "v1",
-        "k2": "v2"
-    }
-})"
-);
-    sdkbox::bb::plugin::AppsFlyer::setMinTimeBetweenSessions(21);
-    sdkbox::bb::plugin::AppsFlyer::setResolveDeepLinkURLs({"test.com", "click.test.com"});
+    */
 
     sdkbox::bb::plugin::AppsFlyer::start();
+
+    sdkbox::bb::plugin::AppsFlyer::logEvent(sdkbox::bb::plugin::AppsFlyer::AFEventPurchase,
+                                            R"({
+"name": "test_name",
+"price": "123"
+})");
+
 }
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_sdkbox_test_app_sample_MainActivity_nativeSend2(JNIEnv *env, jobject thiz, jstring jplugin, jstring jfunc, jint jparami) {
+Java_com_sdkbox_test_app_sample_MainActivity_nativeSend2(JNIEnv *env, jobject thiz, jstring jplugin, jstring jfunc, jstring jparams) {
+    /*
     const char* c_str = nullptr;
     c_str = env->GetStringUTFChars(jplugin, nullptr);
     if(c_str == nullptr) { return; }
@@ -176,9 +183,12 @@ Java_com_sdkbox_test_app_sample_MainActivity_nativeSend2(JNIEnv *env, jobject th
     std::string func(c_str);
     env->ReleaseStringUTFChars(jfunc, c_str);
 
-    sdkbox::bb::Msg msg = sdkbox::bb::Msg(plugin, func);
-
-    msg.pushValue(jparami);
+    c_str = nullptr;
+    c_str = env->GetStringUTFChars(jparams, nullptr);
+    if(c_str == nullptr) { return; }
+    std::string params(c_str);
+    env->ReleaseStringUTFChars(jparams, c_str);
+    */
 
     sdkbox::bb::plugin::AppsFlyer::stop();
 }

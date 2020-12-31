@@ -16,7 +16,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         tvLog = findViewById<TextView>(R.id.log)
-        var button: Button? = findViewById<Button>(R.id.btnStart)
+        var button: Button? = findViewById<Button>(R.id.btnInit)
+        button?.setOnClickListener {
+            nativeInit()
+        }
+        button = findViewById<Button>(R.id.btnStart)
         button?.setOnClickListener {
             nativeSend1("", "", "")
         }
@@ -24,8 +28,6 @@ class MainActivity : AppCompatActivity() {
         button?.setOnClickListener {
             nativeSend2("", "", "")
         }
-
-        nativeInit()
     }
 
     private fun log(s: String) {
