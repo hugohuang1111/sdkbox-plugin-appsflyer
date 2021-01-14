@@ -31,5 +31,8 @@
                 "class": "BBPluginAppsFlyer"
             }
         }
+    },
+    "dependencies": {
+        "Bridge": "0.0.1"
     }
 }
