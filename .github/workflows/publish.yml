@@ -24,10 +24,10 @@ jobs:
       run: curl https://raw.githubusercontent.com/sdkbox/storage/master/plugins/Bridge.zip -o Bridge.zip && unzip Bridge.zip
 
     - name: Build
-      run: ./sdkboxt -cmd build
+      run: ./sdkboxt build .
 
     - name: Package
-      run: ./sdkboxt -cmd package
+      run: ./sdkboxt package .
 
     - name: upload plugin package
       uses: actions/upload-artifact@v2
