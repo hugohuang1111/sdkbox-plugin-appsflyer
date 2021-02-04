@@ -4,7 +4,7 @@
 
 ### Download depedencies
 
-* SDKBox tools [sdkboxt in GitHub](https://raw.githubusercontent.com/sdkbox/storage/master/sdkboxtools/sdkboxt) / [sdkboxt in Gitee](https://gitee.com/SDKBox/storage/raw/master/sdkboxtools/sdkboxt)
+* SDKBox tools [sbc in GitHub](https://raw.githubusercontent.com/sdkbox/storage/master/sbc/sbc) / [sbc in Gitee](https://gitee.com/SDKBox/storage/raw/master/sbc/sbc)
 
 * SDKBox Bridge Plugin [Bridge.zip in GitHub](https://raw.githubusercontent.com/sdkbox/storage/master/plugins/Bridge.zip) / [Bridge.zip in Gitee](https://gitee.com/SDKBox/storage/raw/master/plugins/Bridge.zip)
 
@@ -24,7 +24,7 @@ Project Struct:
 ├── package
 ├── proj.android
 ├── proj.ios
-└── sdkboxt             // Download
+└── sbc             // Download
 ```
 
 ### Run

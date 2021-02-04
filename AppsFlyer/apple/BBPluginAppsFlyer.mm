@@ -85,7 +85,7 @@
 }
 
 - (void) collectASA: (BBMsg*) msg {
-    [AppsFlyerLib shared].disableCollectASA = [msg getValueBOOL:0];
+    [AppsFlyerLib shared].disableCollectASA = ![msg getValueBOOL:0];
 }
 
 - (void) waitForATTUserAuthorizationWithTimeoutInterval: (BBMsg*) msg {

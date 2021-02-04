@@ -17,17 +17,17 @@ jobs:
     - name: Check out repo
       uses: actions/checkout@v2
 
-    - name: Download sdkboxt
-      run: curl https://raw.githubusercontent.com/sdkbox/storage/master/sdkboxtools/sdkboxt -o sdkboxt && chmod +x ./sdkboxt
+    - name: Download sbc
+      run: curl https://raw.githubusercontent.com/sdkbox/storage/master/sbc/sbc -o sbc && chmod +x ./sbc
 
     - name: Download Bridge.zip
       run: curl https://raw.githubusercontent.com/sdkbox/storage/master/plugins/Bridge.zip -o Bridge.zip && unzip Bridge.zip
 
     - name: Build
-      run: ./sdkboxt build .
+      run: ./sbc build .
 
     - name: Package
-      run: ./sdkboxt package .
+      run: ./sbc package .
 
     - name: upload plugin package
       uses: actions/upload-artifact@v2
