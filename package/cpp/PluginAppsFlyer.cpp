@@ -172,7 +172,7 @@ void AppsFlyer::setAdditionalData(const std::string& json) {
 
 void AppsFlyer::getAppsFlyerUID(const std::function<void(const std::string& appsflyerID)>& cb) {
     sdkbox::bb::Msg msg = sdkbox::bb::Msg("AppsFlyer", "getAppsFlyerUID");
-    sdkbox::bb::Bridge::send(msg, [&](const Msg& rMsg) {
+    sdkbox::bb::Bridge::send(msg, [=](const Msg& rMsg) {
         std::string appsflyerID = rMsg.getValue(0).stringValue();
         cb(appsflyerID);
     });
