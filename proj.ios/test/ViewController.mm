@@ -31,7 +31,7 @@
     sdkbox::bb::plugin::AppsFlyer::setAppID("1423010453");
     sdkbox::bb::plugin::AppsFlyer::setDevKey("gQHXnL6H3dccTbdNcLywNj");
     sdkbox::bb::plugin::AppsFlyer::setDebug(true);
-    
+
     sdkbox::bb::plugin::AppsFlyer::setImeiData("imei string");
     sdkbox::bb::plugin::AppsFlyer::setAndroidIdData("android id");
     sdkbox::bb::plugin::AppsFlyer::setCollectIMEI(true);

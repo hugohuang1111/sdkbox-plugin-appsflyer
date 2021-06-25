@@ -1,7 +1,8 @@
 {
-    "version": "0.0.1",
+    "version": "0.0.11",
     "name": "appsflyer",
     "author": "hugo",
+    "organization": "SDKBox",
     "description": "sdkbox plugin for appsflyer",
     "libraries": {
         "android": {
@@ -33,6 +34,6 @@
         }
     },
     "dependencies": {
-        "Bridge": "0.0.1"
+        "Bridge": "0.0.11"
     }
 }
