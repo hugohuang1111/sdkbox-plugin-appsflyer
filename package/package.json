@@ -34,6 +34,6 @@
         }
     },
     "dependencies": {
-        "Bridge": "0.0.14"
+        "Bridge": "0.0.15"
     }
 }
