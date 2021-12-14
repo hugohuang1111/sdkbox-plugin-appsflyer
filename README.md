@@ -4,9 +4,10 @@
 
 ### Download depedencies
 
-* SDKBox tools [sbc in GitHub](https://raw.githubusercontent.com/sdkbox/storage/master/sbc/sbc) / [sbc in Gitee](https://gitee.com/SDKBox/storage/raw/master/sbc/sbc)
+* SDKBox tools [sbc in Google Drive](https://drive.google.com/file/d/1o0kbMLq1kHBxXbPzQOrNg8IwMdoACv4y/view?usp=sharing) / [sbc in Gitee](https://gitee.com/SDKBox/storage/raw/master/sbc/sbc)
 
-* SDKBox Bridge Plugin [Bridge.zip in GitHub](https://raw.githubusercontent.com/sdkbox/storage/master/plugins/Bridge.zip) / [Bridge.zip in Gitee](https://gitee.com/SDKBox/storage/raw/master/plugins/Bridge.zip)
+* SDKBox Bridge Plugin [Bridge.zip in Google Drive](https://drive.google.com/file/d/1CNMzbrwe3yZ1D4HD06AGbbNWD-cj5tVi/view?usp=sharing) / [Bridge.zip in Gitee](https://gitee.com/SDKBox/storage/raw/master/plugins/Bridge.zip)
+
 
 Project Struct:
 
